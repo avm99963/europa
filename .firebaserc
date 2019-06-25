@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "default": "eleccioneseuropeas2019"
+  },
+  "targets": {
+    "eleccioneseuropeas2019": {
+      "hosting": {
+        "eleccioneseuropeas2019": [
+          "eleccioneseuropeas2019"
+        ],
+        "eleccionseuropees2019": [
+          "eleccionseuropees2019"
+        ]
+      }
+    }
+  }
+}

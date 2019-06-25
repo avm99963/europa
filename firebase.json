@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "public": ".",
+    "target": "eleccionseuropees2019",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
