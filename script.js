@@ -36,16 +36,20 @@ function cambiartab(e) {
   });
 }
 
+// Abre el diálogo con la información del spietzenkandidat
 function openModal(e) {
   var person = this.getAttribute("data-person");
   document.querySelector(".modal[data-person=\""+person+"\"]").showModal();
 }
 
+// Cierra el diálogo
 function closeModal(e) {
   this.parentNode.close();
 }
 
+// Código que se ejecuta cuando se carga la página (justo cuando el DOM está listo)
 document.addEventListener("DOMContentLoaded", function() {
+  // Registramos todos los botones:
   for (var i = 1; i <= n; ++i) {
     document.querySelector(".selector_mapa[data-map=\""+i+"\"]").addEventListener("click", cambiarmapa);
   }
@@ -62,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function() {
     el.addEventListener("click", closeModal);
   });
 
+  // Registramos los <dialog> con el Polyfill por si algún navegador no los soporta
   document.querySelectorAll("dialog").forEach(el => {
     dialogPolyfill.registerDialog(el);
   });

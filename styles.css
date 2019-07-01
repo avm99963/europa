@@ -51,24 +51,24 @@ body {
 
 .portada .titulo {
   position: absolute;
-  top: Calc(50% - 20px);
+  top: 50%;
   width: 100%;
 }
 
 .portada .titulo h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 40px;
+  font-family: 'Alfa Slab One', sans-serif;
+  font-weight: 400;
+  font-size: 45px;
   text-align: center;
   animation: var(--duracion-animacion-titulo) ease-out 0s 1 titulo;
   margin: 0!important;
-  color: white;
+  color: var(--secondary-color);
   text-shadow: 3px 3px 10px black;
 }
 
 section {
   margin: 64px 128px 64px 128px;
-  font-size: 18px; /* Before: 24px */
+  font-size: 19px; /* Before: 24px */
 }
 
 section h2 {
@@ -80,11 +80,18 @@ section h2 {
 }
 
 section h2::before, section h2::after {
-  margin: 0 16px;
   content: "★";
   color: var(--secondary-color);
   font-size: 14px;
   vertical-align: 40%;
+}
+
+section h2::before {
+  margin: 0 16px 0 0;
+}
+
+section h2::after {
+  margin: 0 0 0 16px;
 }
 
 .flourish-embed {
@@ -543,39 +550,49 @@ cite {
   background-position: center;
 }
 
+.tab_content .party .text h4 {
+  margin-top: 1em;
+  margin-bottom: .3em;
+  text-decoration: underline;
+}
+
+.tab_content .party .text p {
+  margin-top: 0;
+}
+
 .tab_content .party.sd .logo {
   background-size: 75%;
 }
 
-.tab_content .party.epp b {
+.tab_content .party.epp b, .tab_content .party.epp h4 {
   color: #0155a0;
 }
 
-.tab_content .party.sd b {
+.tab_content .party.sd b, .tab_content .party.sd h4 {
   color: #ff0000;
 }
 
-.tab_content .party.alde b {
+.tab_content .party.alde b, .tab_content .party.alde h4 {
   color: rgb(255, 0, 134);
 }
 
-.tab_content .party.greens b {
+.tab_content .party.greens b, .tab_content .party.greens h4 {
   color: rgb(20, 190, 65);
 }
 
-.tab_content .party.acre b {
+.tab_content .party.acre b, .tab_content .party.acre h4 {
   color: #005D98;
 }
 
-.tab_content .party.guengl b {
+.tab_content .party.guengl b, .tab_content .party.guengl h4 {
   color: rgb(197, 38, 44);
 }
 
-.tab_content .party.efdd b {
+.tab_content .party.efdd b, .tab_content .party.efdd h4 {
   color: rgb(0, 169, 183);
 }
 
-.tab_content .party.efa b {
+.tab_content .party.efa b, .tab_content .party.efa h4 {
   color: #7a3c97;
 }
 
@@ -603,6 +620,10 @@ footer a, #fonts {
 .help {
   border-bottom: dashed 1px currentColor;
   cursor: help;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 /* RESPONSIVIDAD */
@@ -637,8 +658,13 @@ footer a, #fonts {
 }
 
 @media (max-width: 700px) {
+  .portada .titulo h1 {
+    font-size: 40px;
+  }
+
   section {
     margin: 16px;
+    font-size: 18px;
   }
 
   section h2 {
