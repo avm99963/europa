@@ -47,6 +47,14 @@ function closeModal(e) {
   this.parentNode.close();
 }
 
+// Muestra el diálogo del sistema operativo (Android/iOS) para compartir la web
+function share() {
+  navigator.share({
+    title: "Eleccions al Parlament Europeu 2019",
+    url: "https://eleccionseuropees2019.web.app"
+  });
+}
+
 // Código que se ejecuta cuando se carga la página (justo cuando el DOM está listo)
 document.addEventListener("DOMContentLoaded", function() {
   // Registramos todos los botones:
@@ -70,4 +78,11 @@ document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll("dialog").forEach(el => {
     dialogPolyfill.registerDialog(el);
   });
+});
+
+window.addEventListener("load", function() {
+  if (navigator.share !== undefined) {
+    document.querySelector("body").classList.add("sharingsupported");
+    document.querySelector("#nativeshare").addEventListener("click", share);
+  }
 });
